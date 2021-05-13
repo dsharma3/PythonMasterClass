@@ -7,7 +7,7 @@ def write(filename):
     f.close()
 
 try:
-    f = open("test.txt",'w')
+    f = open("test.txt",'w')    
     f.write("this is my test program")
 except Exception:
     print("Error has occured")

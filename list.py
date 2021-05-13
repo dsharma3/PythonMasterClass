@@ -7,4 +7,3 @@ matrix = [[1,2,3],[1,2,3],[1,2,3]]
 
 first_col = [row[1] for row in matrix]
 print(first_col)
-
