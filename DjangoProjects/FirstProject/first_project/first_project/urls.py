@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('first_app/',include("first_app.urls")),
+    path('second_app/',include("first_app.urls"))
+
 ]
 
 
@@ -26,4 +30,8 @@ urlpatterns = [
 2) python manage.py runserver
 3) python manage.py makemigrations
 4) python manage.py migrate
+
+2nd day
+
+1) python manage.py startapp first_app
 '''
