@@ -4,5 +4,6 @@ from first_app import views
 
 urlpatterns = [
     path('',views.index),
-    path('contactus', views.contactus)
+    path('contactus', views.contactus),
+    path('templates_example',views.templates_example)
 ]
