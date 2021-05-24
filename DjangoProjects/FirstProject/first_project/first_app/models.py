@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import deconstruct
 
 # Create your models here.
 
@@ -17,6 +18,10 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
 
+class ContactUs(models.Model):
+    name = models.CharField(max_length=200,unique=False)
+    email=models.EmailField(max_length=200,unique=False)
+    description = models.TextField()
 
 
 
