@@ -5,7 +5,7 @@ from first_app.forms import ContactUsForm
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Hello World!")
+    return render(request,"index.html")
 
 
 def templates_example(request):
@@ -22,17 +22,15 @@ def contactus(request):
     if request.method == 'POST':
         contactus = ContactUsForm(request.POST)
 
+        print(contactus.errors)
         if contactus.is_valid():
             print("Got the data")
 
             print('NAME:',contactus.cleaned_data['name'])
             print('Email:',contactus.cleaned_data['email'])
             print('Description:',contactus.cleaned_data['description'])
-            contactus_model = ContactUs()
-            contactus_model.name = contactus.cleaned_data['name']
-            contactus_model.email = contactus.cleaned_data['email']
-            contactus_model.description = contactus.cleaned_data['description']
-            contactus_model.save()
+           
+            contactus.save()
 
         else:
             return HttpResponse('Invalid Data')
